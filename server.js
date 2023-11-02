@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   res.setHeader("Content-Type", "application/json");
   next();
 });
-app.use(slow({ delay: 3000 }));
+app.use(slow({ delay: 6000 }));
 
 const news = [
   {
@@ -51,7 +51,7 @@ const news = [
   },
 ];
 
-app.get("/news", async (request, response) => {
+app.get("/", async (request, response) => {
   response
     .status(200)
     .send(JSON.stringify({ 
